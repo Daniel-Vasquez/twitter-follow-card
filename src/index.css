@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  font-family: system-ui;
+  display: grid;
+  place-content: center;
+  min-height: 80vh;
+}
+
+.container-app {
+  padding: 5px 20px 25px;
+  background-color: rgb(22, 24, 28);
+  border-radius: 20px;
+  width: 350px;
+}
+
+.container-app-text {
+  margin: 7px 0px 20px;
+  font-size: 20px;
+  color: white;
+}
+
+.twitter-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
