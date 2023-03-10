@@ -2,15 +2,15 @@ import { useState } from 'react';
 import './styles/TwitterFollowCard.css'
 
 
-export const TwitterFollowCard = ({ children, userName, formatUserName }) => {
-  const [isFollowing, setIsFollowing] = useState(false)
+export const TwitterFollowCard = ({ children, userName, initialIsFollowing, formatUserName }) => {
+  const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
 
   const textBtn = isFollowing ? 'Siguiendo' : 'Seguir'
-  
-  const buttonClassName = isFollowing 
+
+  const buttonClassName = isFollowing
     ? 'tw-follow-card-button is-following'
     : 'tw-follow-card-button'
-  
+
   const handleClick = () => {
     setIsFollowing(!isFollowing)
   }
@@ -36,10 +36,14 @@ export const TwitterFollowCard = ({ children, userName, formatUserName }) => {
       </header>
 
       <aside>
-        <button className={buttonClassName} onClick={ handleClick }>
-          {textBtn}
+        <button
+          className={buttonClassName}
+          onClick={handleClick}
+        >
+          <span className='tw-followCard-text'>{textBtn}</span>
+          <span className='tw-followCard-stopFollow'>Dejar de seguir</span>
         </button>
-      </aside> 
+      </aside>
     </article>
   )
 }
